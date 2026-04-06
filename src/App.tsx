@@ -245,12 +245,18 @@ export default function App() {
                 Premium electrical installations, smart home automation, and expert maintenance tailored for the modern lifestyle.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className={`${colors.accent} ${colors.accentHover} text-white px-8 py-4 rounded-full font-bold text-lg shadow-xl shadow-orange-200 flex items-center justify-center gap-2 transition-all hover:translate-y-[-2px] active:scale-95`}>
+                <a 
+                  href="#contact"
+                  className={`${colors.accent} ${colors.accentHover} text-white px-8 py-4 rounded-full font-bold text-lg shadow-xl shadow-orange-200 flex items-center justify-center gap-2 transition-all hover:translate-y-[-2px] active:scale-95`}
+                >
                   Start Your Project <ChevronRight className="w-5 h-5" />
-                </button>
-                <button className="bg-white text-[#0f172a] border border-slate-200 px-8 py-4 rounded-full font-bold text-lg hover:bg-slate-50 transition-all flex items-center justify-center gap-2">
+                </a>
+                <a 
+                  href="#gallery"
+                  className="bg-white text-[#0f172a] border border-slate-200 px-8 py-4 rounded-full font-bold text-lg hover:bg-slate-50 transition-all flex items-center justify-center gap-2"
+                >
                   View Our Work
-                </button>
+                </a>
               </div>
               
               <div className="mt-12 flex items-center gap-6">
