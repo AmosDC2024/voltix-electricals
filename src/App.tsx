@@ -106,6 +106,7 @@ const testimonials = [
     role: 'Homeowner in Akure',
     content: 'Voltix transformed our home with their smart lighting installation. Professional, clean, and highly efficient.',
     rating: 5,
+    image: 'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&q=80&w=200'
   },
   {
     id: 2,
@@ -113,6 +114,7 @@ const testimonials = [
     role: 'Business Owner',
     content: 'The maintenance team is top-notch. They handle all our electrical issues across multiple properties with ease.',
     rating: 4,
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200'
   },
   {
     id: 3,
@@ -120,6 +122,7 @@ const testimonials = [
     role: 'Architect',
     content: 'I always recommend Voltix to my clients. Their attention to detail in electrical design is unmatched.',
     rating: 5,
+    image: 'https://images.unsplash.com/photo-1523824921871-d6f1a15151f1?auto=format&fit=crop&q=80&w=200'
   },
 ];
 
@@ -252,12 +255,17 @@ export default function App() {
               
               <div className="mt-12 flex items-center gap-6">
                 <div className="flex -space-x-3">
-                  {[1,2,3,4].map(i => (
+                  {[
+                    "https://images.unsplash.com/photo-1531384441138-2736e62e0919?auto=format&fit=crop&q=80&w=100",
+                    "https://images.unsplash.com/photo-1523824921871-d6f1a15151f1?auto=format&fit=crop&q=80&w=100",
+                    "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100",
+                    "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&q=80&w=100"
+                  ].map((url, i) => (
                     <img 
                       key={i}
-                      src={`https://i.pravatar.cc/100?img=${i+10}`} 
+                      src={url} 
                       alt="User" 
-                      className="w-10 h-10 rounded-full border-2 border-white"
+                      className="w-10 h-10 rounded-full border-2 border-white object-cover"
                       referrerPolicy="no-referrer"
                     />
                   ))}
@@ -266,7 +274,7 @@ export default function App() {
                   <div className="flex text-orange-400 mb-0.5">
                     {[1,2,3,4,5].map(i => <Star key={i} className="w-3 h-3 fill-current" />)}
                   </div>
-                  <p className="font-medium text-slate-600">Trusted by 2,000+ homeowners</p>
+                  <p className="font-medium text-slate-600">Trusted by 450+ homeowners</p>
                 </div>
               </div>
             </motion.div>
@@ -511,7 +519,7 @@ export default function App() {
                 <p className="text-lg text-slate-700 italic mb-8">"{t.content}"</p>
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-slate-200 rounded-full overflow-hidden">
-                    <img src={`https://i.pravatar.cc/100?u=${t.name}`} alt={t.name} referrerPolicy="no-referrer" />
+                    <img src={t.image} alt={t.name} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                   </div>
                   <div>
                     <p className="font-bold text-[#0f172a]">{t.name}</p>
